@@ -1,6 +1,6 @@
 # README
 
-## messages
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -9,10 +9,10 @@
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
-- bilongs_to :user
-- bilongs_to :group
+- bilongs_to :user
+- bilongs_to :group
 
-## users
+## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -21,11 +21,11 @@
 |password|string|null: false|
 
 ### Association
-- has_many :messages
-- has_many :groups_users
-- has_many :groups, through: :groups_users
+- has_many :messages
+- has_many :groups_users
+- has_many :groups, through: :groups_users
 
-## groups
+## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -34,11 +34,11 @@
 |user_name|string|null: false, unique: true|
 
 ### Association
-- has_many :users
-- has_many :groups_users
-- has_many :users, through: :groups_users
+- has_many :users
+- has_many :groups_users
+- has_many :users, through: :groups_users
 
-## groups_users
+## groups_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -46,5 +46,5 @@
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
-- belongs_to :user
+- belongs_to :group
+- belongs_to :user
