@@ -4,19 +4,20 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|image|image_url|
+|text|text|
+|image|string|
 |user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- bilongs_to :user
-- bilongs_to :group
+- belongs_to :user
+- belongs_to :group
 
 ## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|mame|string|null: false, unique: true|
+|name|string|null: false, unique: true, index: ture|
 |email|string|null: false, unique: true|
 |password|string|null: false|
 
@@ -30,11 +31,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
-|user_id|integer|null: false, foreign_key: true|
-|user_name|string|null: false, unique: true|
 
 ### Association
-- has_many :users
 - has_many :groups_users
 - has_many :users, through: :groups_users
 
