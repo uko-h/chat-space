@@ -1,6 +1,6 @@
 # README
 
-## messagesテーブル
+## messages
 
 |Column|Type|Options|
 |------|----|-------|
@@ -8,7 +8,7 @@
 |image|image_url|
 |user_id|integer|null: false, foreign_key: true|
 
-### Association
+### Association
 - bilongs_to :user
 - bilongs_to :group
 
