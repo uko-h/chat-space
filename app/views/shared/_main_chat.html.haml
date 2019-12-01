@@ -1,4 +1,12 @@
 .main-chat
   .main-chat__group-info
+    .current-group
+      .current-group__group-name
+        group-name
+      .current-group__group-members
+        Member: name
+    .edit-btn
+    = link_to "#", class: "edit-btn edit-btn--edit" do
+      Edit
   .main-chat__message-list
   .main-chat__message-form
