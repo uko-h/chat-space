@@ -84,6 +84,7 @@
   }
   &__message-form {
     height: 90px;
+    padding: 20px 40px;
     background-color: #d2d2d2;
   }
 }
@@ -120,7 +121,6 @@
 }
 
 .messages {
-  margin-left: 40px;
   height: 88px;
 
   &__data {
@@ -144,4 +144,38 @@
   color: #999999;
   font-size: 12px;
   margin-left: 10px;
+}
+
+.form {
+  display: flex;
+}
+
+.create-message {
+  width: 100%;
+  position: relative;
+
+  &__form {
+    height: 100%;
+    width: 100%;
+    padding: 0 40px 0 10px;
+  }
+  &__image {
+    font-size: 23px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  &__image__file {
+    display: none;
+  }
+}
+
+.submit-btn {
+  background-color:#38aef0;
+  height: 50px;
+  padding: 0 30px;
+  margin-left: 15px;
+  color: white;
+  cursor: pointer;
 }
