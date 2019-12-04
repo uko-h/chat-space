@@ -28,9 +28,9 @@
   .main-chat__message-form
     .form
       .create-message
-        %input.create-message__form{:name => "message", :placeholder => "type a message", :type => "text"}
+        %input.create-message__form{name: "message", placeholder: "type a message", type: "text"}
         %label.create-message__image
           %i.far.fa-image
-          %input.create-message__image__file{:type => "file"}
+          %input.create-message__image__file{type: "file"}
           .image
-      %input.submit-btn{"data-disable-with" => "Send",:type => "submit",:name => "commit", :value => "Send"}
+      %input.submit-btn{type: "submit", name: "commit", value: "Send"}
