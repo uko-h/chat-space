@@ -50,6 +50,9 @@
   height: 91px;
   width: 100%;
   text-align: left;
+  a {
+    text-decoration: none;
+  }
 
   &__group-name {
     padding: 20px 20px 5px;
