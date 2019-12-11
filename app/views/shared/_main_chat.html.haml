@@ -2,35 +2,23 @@
   .main-chat__group-info
     .current-group
       .current-group__group-name
-        group-name
+        = @group.name
       .current-group__group-members
-        Member: name
+        - @group.users.each do |user|
+          = user.name
     .edit-btn
-    = link_to "#", class: "edit-btn edit-btn--edit" do
+    = link_to edit_group_path(@group), class: "edit-btn edit-btn--edit" do
       Edit
   .main-chat__message-list
     .messages
-      .messages__data
-        .user-name
-          user-name
-        .create-date
-          yyyy/mm/dd
-      .messages__user-message
-        message
-    .messages
-      .messages__data
-        .user-name
-          user-name
-        .create-date
-          yyyy/mm/dd
-      .messages__user-message
-        message
+      = render @messages
   .main-chat__message-form
     .form
-      .create-message
-        %input.create-message__form{name: "message", placeholder: "type a message", type: "text"}
-        %label.create-message__image
-          %i.far.fa-image
-          %input.create-message__image__file{type: "file"}
-          .image
-      %input.submit-btn{type: "submit", name: "commit", value: "Send"}
+      = form_for [@group, @message] do |f|
+        .form__box
+          =f.text_field :content, class: 'form__message', placeholder: 'type a message'
+          .form__image
+            =f.label :image, class: 'form__image__file' do
+              =icon('far', 'image', class: 'icon')
+              =f.file_field :image, class: 'hidden'
+          =f.submit 'Send', class: 'form__submit-btn'
