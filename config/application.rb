@@ -6,8 +6,10 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
 module ChatSpace
   class Application < Rails::Application
       config.i18n.default_locale = :ja
+      config.time_zone = 'Tokyo'
   end
 end
