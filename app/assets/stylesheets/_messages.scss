@@ -2,11 +2,14 @@
   box-sizing: border-box;
 }
 
+.wrapper {
+  display: flex;
+}
+
 .side-bar {
   height: 100vh;
   width: 300px;
   background-color: #253141;
-  position: fixed;
   &__user-name {
     height: 100px;
       position: relative;
@@ -73,7 +76,6 @@
   height: 100vh;
   width: calc(100vw - 300px);
   background-color: #ffffff;
-  margin-left: 300px;
 
   &__group-info {
     height: 100px;
